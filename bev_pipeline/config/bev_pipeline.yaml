@@ -1,0 +1,30 @@
+# Runtime config for the BEV inference node.
+# Loaded via bev_pipeline.config.RuntimeConfig.from_yaml.
+# Defaults below target the Hamilton robot (full_campus-style bags); override
+# per deployment.
+bev_pipeline:
+  environment: full_campus
+  lidar_topic: /hamilton/livox/lidar
+  odom_topic: /hamilton/odom
+  image_topic: /hamilton/hamilton_zed/rgb/image_rect_color
+  imu_topic: null
+  gps_topic: null
+
+  # Which feature extractor to run live (must match the trained classifier).
+  # Default here is a LiDAR-only candidate so the node needs no camera unless
+  # camera_dinov2 is chosen.
+  extractor: bev_cnn
+
+  classifier_path: models/full_campus/classifier_full_campus.pkl
+  classifier_meta_path: models/full_campus/classifier_meta_full_campus.json
+
+  submap_window: 5
+  sensor_height: 0.6
+  bev_extent: 32.0
+  bev_size: 128
+  smoothing_window: 10
+
+  predicted_cluster_topic: /predicted_cluster
+  predicted_state_topic: /predicted_state
+  override_topic: /cluster_override
+  device: cpu

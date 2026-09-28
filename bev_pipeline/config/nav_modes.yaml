@@ -1,0 +1,61 @@
+# Human-labeling vocabulary: PEDESTRIAN traversal-mode clusters (purely GEOMETRIC).
+#
+# DESIGN: clusters describe the SHAPE of navigable space — what you could tell
+# from a LiDAR depth scan with your eyes closed. SEMANTIC identity (road, bridge,
+# building, traffic-light, trees) is NOT a cluster — the VLM detects it as an STL
+# predicate arg (Detect(Bridge), Detect(Crosswalk)) and it composes with the
+# geometric cluster:
+#   "cross the street" = path/open_space + Detect(Crosswalk)
+#   "cross the bridge" = passage + Detect(Bridge)
+#   "turn at the intersection with the traffic light" = junction + Detect(TrafficLight)
+# So crossing / vegetation / bridge / building are NEVER hand-labeled here.
+#
+# You hand-label ONLY the shape below. Phase (approach/in/exit) is auto-derived
+# from motion around junction/passage, not hand-labeled.
+#
+# DECISION RULE (label by the FIRST that matches, top-down — this keeps labeling
+# consistent on the open/enclosed continuum):
+#   1. structure close on BOTH sides?         -> passage
+#   2. structure close on ONE side?           -> along_edge
+#   3. opens into 3+ distinct directions?     -> junction
+#   4. wide, free to roam multiple directions?-> open_space
+#   5. moving along a defined channeled way?  -> path   (the common default)
+#   6. none of the above / ambiguous          -> other
+# (covered dropped: a down-tilted LiDAR cannot observe overhead structure.)
+decision_order: [passage, along_edge, junction, open_space, path, other]
+
+# PEDESTRIAN DOMAIN: planner_mode == name, deliberately. The real robot is a
+# pedestrian and these bags are pedestrian environments, so a footpath fork is NOT
+# an "Intersection" and a hedge is NOT a "Wall". Using one vocabulary here removes an
+# unnecessary translation layer.
+#
+# The car-on-road domain (CARLA) still uses road-network planner names via
+# taxonomy_export.ROAD_HIERARCHY; cluster_map.<env>.yaml is the seam that picks.
+# So the two-vocabulary MACHINERY remains, it is just an identity map here:
+#   - geometric `junction` = "3+ ways meet here", a shape fact
+#   - planner  `junction`  = the fork the task refers to
+# A junction looks like a path within a single 14 m frame, so the geometric label
+# is unreliable in the real world while the planner construct is always well
+# defined. cluster_map.<env>.yaml (see taxonomy_export.py) is the seam that binds
+# them per environment, and declares whether each planner mode is perception-backed.
+#
+# PHASES ARE NOT LISTED HERE. `Intersection: Approach` / `Intersection: Exit`
+# (and the Bridge/Building phase modes) are planner-facing names derived from the
+# cluster STREAM by phase_deriver.py — approach/in/exit are temporal, not a shape
+# you can see in one frame. Do not add them as geometric modes; there is nothing
+# to hand-label.
+
+modes:
+  - {key: 1, name: open_space,  planner_mode: "open_space",  desc: "wide, free to roam in multiple directions"}
+  - {key: 2, name: path,        planner_mode: "path",        desc: "channeled way, sides not close (common default)"}
+  - {key: 3, name: along_edge,  planner_mode: "along_edge",  desc: "structure close on ONE side"}
+  - {key: 4, name: passage,     planner_mode: "passage",     desc: "structure close on BOTH sides (flanked/narrow)"}
+  - {key: 5, name: junction,    planner_mode: "junction",    desc: "branch point, 3+ distinct open directions"}
+  - {key: 7, name: other,       planner_mode: "other",       desc: "ambiguous / none of the above"}
+
+# geometric auto-label -> suggested mode the labeler pre-selects (you confirm/correct).
+geom_suggestion:
+  open_space: open_space
+  along_edge: along_edge
+  corridor:   passage
+  junction:   junction

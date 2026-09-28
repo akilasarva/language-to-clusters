@@ -1,0 +1,60 @@
+{
+  "plan_name": "Right turn at stop sign",
+  "description": "Drive along the road until a stop sign, then turn right through the intersection.",
+  "cluster_labels": {
+    "5": "Road: On",
+    "6": "Road: On",
+    "8": "Road: On",
+    "9": "Road: On",
+    "10": "Road: On",
+    "11": "Road: On",
+    "12": "Road: On",
+    "7": "Intersection: Approach/Enter",
+    "0": "Intersection: In",
+    "1": "Intersection: In",
+    "2": "Intersection: In",
+    "3": "Open Space",
+    "4": "Open Space",
+    "-1": "Along Wall"
+  },
+  "steps": [
+    {
+      "step": 0,
+      "description": "Drive on road toward stop sign",
+      "start_cluster": 5,
+      "goal_cluster": 7,
+      "start_mode": "Road: On",
+      "goal_mode": "Intersection: Approach/Enter",
+      "transition_cue": "Detect(StopSign)",
+      "notes": null,
+      "branches": null
+    },
+    {
+      "step": 1,
+      "description": "Enter intersection",
+      "start_cluster": 7,
+      "goal_cluster": 0,
+      "start_mode": "Intersection: Approach/Enter",
+      "goal_mode": "Intersection: In",
+      "transition_cue": "Detect(Inside Intersection)",
+      "notes": null,
+      "branches": null
+    },
+    {
+      "step": 2,
+      "description": "Complete right turn",
+      "start_cluster": 0,
+      "goal_cluster": 5,
+      "start_mode": "Intersection: In",
+      "goal_mode": "Road: On",
+      "transition_cue": "Bearing(Right) completed",
+      "notes": null,
+      "branches": null
+    }
+  ],
+  "nl_planner": {
+    "version": 2,
+    "tree_shaped": true,
+    "environment": "livox1"
+  }
+}

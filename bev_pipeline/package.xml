@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>bev_pipeline</name>
+  <version>0.0.0</version>
+  <description>Robocentric BEV / 3D-volumetric behavioral-state classification pipeline.
+    Non-destructive replacement for the clustering package's planar-slice +
+    HDBSCAN approach: builds a gravity-aligned BEV raster (or coarse voxel grid)
+    per frame, extracts features via one of several swappable candidates, and
+    classifies with a supervised model trained on trajectory-derived labels.
+    Publishes the same /predicted_cluster Int16 contract nl_planner consumes,
+    plus a richer /predicted_state JSON topic.</description>
+  <maintainer email="akilasar@mit.edu">akilasar</maintainer>
+  <license>TODO: License declaration</license>
+
+  <depend>python3-torch</depend>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

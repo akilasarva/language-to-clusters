@@ -1,0 +1,23 @@
+# colcon
+build/
+install/
+log/
+
+# python
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# run outputs and data (kept out of the repo)
+*.db3
+*.jsonl
+debug_logs/
+reports/
+results/
+bev_pipeline/datasets/
+
+*.env
+
+# generated at run time by drive_english.py
+carla_gt_bridge/config/english.*.json

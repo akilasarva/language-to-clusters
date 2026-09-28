@@ -1,0 +1,13 @@
+environment: meadow_1hz
+modes:
+  'Edge: Along':
+  - 0
+  Corridor:
+  - 1
+  Covered:
+  - 2
+  Junction:
+  - 3
+  'Space: Open':
+  - 4
+source: bev_pipeline compare_extractors, winner=geom_features

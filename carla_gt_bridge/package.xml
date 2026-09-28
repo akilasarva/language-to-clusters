@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>carla_gt_bridge</name>
+  <version>0.0.0</version>
+  <description>Ground-truth CARLA perception substitutes and offline map segmentation.
+    Derives cluster regions from a town's OpenDRIVE map with no CARLA server, and
+    publishes ground-truth cluster ids / landmark cues on the same topics the real
+    perception stack uses, so the plan-to-motion chain can be validated before any
+    sensor is involved.</description>
+  <maintainer email="akilasar@mit.edu">akilasar</maintainer>
+  <license>MIT</license>
+
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-yaml</exec_depend>
+  <exec_depend>python3-matplotlib</exec_depend>
+  <exec_depend>python3-scipy</exec_depend>
+
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

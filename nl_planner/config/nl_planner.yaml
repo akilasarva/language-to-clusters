@@ -1,0 +1,29 @@
+# Default ROS parameters for nl_planner.launch.py.
+# Override on the command line, e.g.:
+#   ros2 launch nl_planner nl_planner.launch.py taxonomy:=/abs/path/cluster_map.livox1.yaml
+
+nl_planner:
+  ros__parameters:
+    # Resolved at launch time from the 'taxonomy' launch arg.
+    taxonomy_path: ""
+    # pydantic-ai provider:model id. The OPENAI_API_KEY env var is consumed
+    # by the underlying openai client.
+    model: "openai:gpt-4.1"
+    # Hard cap on generator retries. Each retry costs ~2 LLM calls (generator
+    # + tripartite), so 3 attempts ~= 6 calls worst case. The syntax check is
+    # deterministic (stl_syntax.quick_syntax_check), not an LLM round-trip.
+    # Keep in sync with pipeline.DEFAULT_MAX_ATTEMPTS.
+    max_attempts: 3
+    # Gates the deterministic syntax pre-check (not an LLM agent).
+    verify_syntax: true
+    verify_tripartite: true
+
+nl_planner_executor:
+  ros__parameters:
+    # Thin shipper: takes the NavPlan tree from /nl_planner/dispatch, resolves
+    # semantic modes against the taxonomy, and forwards the brain-shaped tree
+    # to /brain/incoming_plan (then calls /brain/load_plan). VLM branch
+    # decisions happen INSIDE brain_controller (v2), so no vlm_model /
+    # image_topic params here.
+    taxonomy_path: ""
+    brain_load_plan_timeout_s: 5.0

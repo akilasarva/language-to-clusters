@@ -1,0 +1,33 @@
+{
+ "town": "town05",
+ "_note": "MAP STRUCTURES for M9, region-scoped, read by gt_cue_node._load_native_landmarks (every list-valued key of config/landmarks.*.json). Separate file because landmarks.town05.json is root-owned (written by the extractor container). Source: scripts/extract_structures.py -> structures.town05.raw.json.",
+ "overpass": [
+  {
+   "region": 3,
+   "label": "path",
+   "source": "ground road under elevated highway lane (region 37), plan-view within 4 m"
+  },
+  {
+   "region": 9,
+   "label": "path",
+   "source": "ground road under elevated highway lane (region 37), plan-view within 4 m"
+  },
+  {
+   "region": 24,
+   "label": "path",
+   "source": "ground road under elevated highway lane (region 37), plan-view within 4 m"
+  }
+ ],
+ "car_park": [
+  {
+   "region": 5,
+   "label": "path",
+   "source": "SM_ParkingBarrier* environment objects"
+  },
+  {
+   "region": 47,
+   "label": "path",
+   "source": "SM_ParkingBarrier* environment objects"
+  }
+ ]
+}

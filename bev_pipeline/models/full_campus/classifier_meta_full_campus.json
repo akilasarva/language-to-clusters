@@ -1,0 +1,27 @@
+{
+  "winner_extractor": "camera_dinov2",
+  "label_names": [
+    "open_road",
+    "along_building",
+    "approach_building",
+    "approach_gate",
+    "approach_intersection",
+    "exit_building",
+    "exit_gate",
+    "exit_intersection",
+    "on_gate",
+    "on_intersection"
+  ],
+  "id_to_label": {
+    "0": "open_road",
+    "1": "along_building",
+    "2": "approach_building",
+    "3": "approach_gate",
+    "4": "approach_intersection",
+    "5": "exit_building",
+    "6": "exit_gate",
+    "7": "exit_intersection",
+    "8": "on_gate",
+    "9": "on_intersection"
+  }
+}

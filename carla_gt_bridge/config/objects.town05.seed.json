@@ -1,0 +1,18 @@
+{
+  "objects": [
+    {
+      "type": "vehicle.tesla.model3",
+      "id": "ego_vehicle",
+      "role_name": "ego_vehicle",
+      "spawn_point": {
+        "x": -9.8,
+        "y": 0.82,
+        "z": 0.5,
+        "roll": 0.0,
+        "pitch": 0.0,
+        "yaw": -179.3
+      },
+      "sensors": []
+    }
+  ]
+}

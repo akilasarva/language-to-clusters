@@ -1,0 +1,43 @@
+{
+  "objects": [
+    {
+      "type": "sensor.pseudo.actor_list",
+      "id": "actor_list"
+    },
+    {
+      "type": "sensor.pseudo.objects",
+      "id": "objects"
+    },
+    {
+      "type": "vehicle.tesla.model3",
+      "id": "ego_vehicle",
+      "role_name": "ego_vehicle",
+      "spawn_point": {
+        "x": 366.65,
+        "y": -326.61,
+        "z": 0.3,
+        "roll": 0.0,
+        "pitch": 0.0,
+        "yaw": -180.0
+      },
+      "sensors": [
+        {
+          "type": "sensor.pseudo.odom",
+          "id": "odometry"
+        },
+        {
+          "type": "sensor.pseudo.speedometer",
+          "id": "speedometer"
+        },
+        {
+          "type": "sensor.pseudo.tf",
+          "id": "tf"
+        },
+        {
+          "type": "actor.pseudo.control",
+          "id": "control"
+        }
+      ]
+    }
+  ]
+}

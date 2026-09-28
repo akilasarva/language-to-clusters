@@ -1,0 +1,17 @@
+{
+  "winner_extractor": "geom_features",
+  "label_names": [
+    "along_edge",
+    "corridor",
+    "covered",
+    "junction",
+    "open_space"
+  ],
+  "id_to_label": {
+    "0": "along_edge",
+    "1": "corridor",
+    "2": "covered",
+    "3": "junction",
+    "4": "open_space"
+  }
+}

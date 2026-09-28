@@ -1,0 +1,17 @@
+environment: combined
+modes:
+  'Edge: Along':
+  - 0
+  Covered:
+  - 1
+  Junction:
+  - 2
+  'Space: Open':
+  - 3
+  Other:
+  - 4
+  Passage:
+  - 5
+  Path:
+  - 6
+source: bev_pipeline compare_extractors, winner=bev_cnn

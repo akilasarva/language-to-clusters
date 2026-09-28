@@ -1,0 +1,25 @@
+{
+  "winner_extractor": "geom_features",
+  "label_names": [
+    "along_wall",
+    "corridor",
+    "covered",
+    "junction_approach",
+    "junction_exit",
+    "junction_in",
+    "open_space",
+    "other",
+    "path_on"
+  ],
+  "id_to_label": {
+    "0": "along_wall",
+    "1": "corridor",
+    "2": "covered",
+    "3": "junction_approach",
+    "4": "junction_exit",
+    "5": "junction_in",
+    "6": "open_space",
+    "7": "other",
+    "8": "path_on"
+  }
+}

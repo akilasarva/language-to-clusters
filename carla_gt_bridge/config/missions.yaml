@@ -1,0 +1,67 @@
+# The nine CARLA missions. `en` is the mission as written, verbatim -- do not edit it.
+#
+# `worlds` are the CARLA set-ups each mission is driven in (Town05): the start region and
+# the neighbour the ego faces (`start`, `toward`), the regions that get a prop spawned
+# (`props`, poses from cones.town05.json / props.town05.json), and any extra ground-truth
+# landmarks for gt_cue_node (`extra_landmarks`, e.g. "stop_sign:63,59"). The worlds were
+# chosen during development; review them before scoring anything against them.
+#
+# Run with scripts/run_missions.py (arms: `ours` = English -> plan tree -> drive,
+# `llm` = the LLM drives decision by decision, BRAIN_MODE=llm).
+
+town: town05
+
+missions:
+  - id: M1
+    en: "cross the bridge unless it is flooded, then stop at the 2nd bench"
+    worlds: []          # not sited: Town05 has no bridge region on a drivable route
+
+  - id: M2
+    en: "drive straight, watching out for pedestrians, and turn left at the 2nd stop sign"
+    worlds:
+      - {name: signs_63_59, start: 0, toward: 63, props: [], extra_landmarks: "stop_sign:63,59"}
+
+  - id: M3
+    en: "drive down the road through 2 intersections and stop just after the third"
+    worlds:
+      - {name: std, start: 0, toward: 63, props: []}
+
+  - id: M4
+    en: "turn right @ the intersection before the fountain"
+    worlds:
+      - {name: std, start: 18, toward: 63, props: [1]}
+      - {name: nofountain, start: 18, toward: 63, props: []}
+
+  - id: M5
+    en: "come up to the crossroads and bear left if you see a cone in it, right if not. At the next one, turn right if you can see a cone, otherwise keep straight, then at the next intersection turn right if you see a cone and left if you don't"
+    worlds:
+      - {name: CCC, start: 0, toward: 63, props: [63, 54, 65]}
+      - {name: CC-, start: 0, toward: 63, props: [63, 54]}
+      - {name: C-C, start: 0, toward: 63, props: [63, 71]}
+      - {name: -CC, start: 0, toward: 63, props: [61, 62]}
+      - {name: -C-, start: 0, toward: 63, props: [61]}
+      - {name: "---", start: 0, toward: 63, props: []}
+
+  - id: M6
+    en: "if the way ahead is blocked, take a right, otherwise go straight. If you went right, stop at the traffic light. But if it wasn't blocked and you went forward then carry on to the 2nd light then take 2 rights and drive till you pass through 2 intersections."
+    worlds:
+      - {name: clear, start: 0, toward: 63, props: []}
+      - {name: blocked, start: 0, toward: 63, props: [63]}
+
+  - id: M7
+    en: "turn at the intersection with the cone but DO NOT turn at the 2nd junction"
+    worlds:
+      - {name: compatible, start: 0, toward: 63, props: [63]}
+      - {name: c60_c59, start: 0, toward: 63, props: [60, 59]}
+      - {name: nocone, start: 0, toward: 63, props: []}
+
+  - id: M8
+    en: "turn left at the junction and go to the fountain, but if the intersection is blocked then continue straight and go around the block till you reach the fountain, taking only left turns."
+    worlds:
+      - {name: clear, start: 18, toward: 63, props: [1]}
+      - {name: blocked, start: 18, toward: 63, props: [1, 63]}
+
+  - id: M9
+    en: "Go straight and once you're past both overpasses take a right and then take a left just past the car park."
+    worlds:
+      - {name: resited, start: 8, toward: 56, props: []}   # overpass / car_park from landmarks.town05.structures.json

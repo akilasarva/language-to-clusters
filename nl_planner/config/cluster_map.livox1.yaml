@@ -1,0 +1,44 @@
+# Per-environment semantic-mode <-> HDBSCAN-cluster-id taxonomy.
+#
+# Source labels:
+#   clustering/clustering/encoder_weights/livox1/cluster_id_to_label_livox1.json
+#     {-1: "Along Wall", 0,1,2: "In Intersection", 3,4: "Open Space",
+#      5,6,8,9,10,11,12: "In Corridor", 7: "Enter Corridor"}
+#
+# Notes:
+# - Prompt-1 vocabulary is more granular than the clustering training
+#   ("Intersection: Approach/Enter" vs "Enter Corridor"). The YAML reconciles
+#   the two. Multiple semantic modes mapping to the same cluster id set is
+#   allowed; the executor uses the first listed id as the canonical scalar
+#   start_cluster / goal_cluster, and treats any listed id as "in this mode".
+# - Update this file (and the source JSON) when the clustering model is
+#   retrained for a new environment.
+
+environment: livox1
+clustering_weights: livox1
+source: clustering/clustering/encoder_weights/livox1/cluster_id_to_label_livox1.json
+
+modes:
+  "Road: On":                      [5, 6, 8, 9, 10, 11, 12]
+  "Intersection: Approach/Enter":  [7]
+  "Intersection: In":              [0, 1, 2]
+  "Intersection: Exit":            [7]
+  "Open Space":                    [3, 4]
+  "Along Wall":                    [-1]
+
+# Centroids keyed by raw canonical ID (first cluster ID per mode).
+# Run tools/map_picker.py to calibrate real CARLA world positions.
+centroids:
+  "5":  [117.5, -210.0, 0.0]   # Road: On              (raw canonical 5)
+  "7":  [97.5,  -190.0, 0.0]   # Intersection Approach (raw canonical 7)
+  "0":  [97.5,  -210.0, 0.0]   # Intersection In       (raw canonical 0)
+  "3":  [102.5, -210.0, 0.0]   # Open Space            (raw canonical 3)
+
+# 0=straight, 90=left, 270=right.
+# Re-run tools/map_picker.py to calibrate for your actual spawn orientation.
+bearing_map:
+  "5-7":  90.0   # Road → Intersection Approach (left)
+  "7-0":   0.0   # Approach → Intersection In   (straight through)
+  "0-7": 180.0   # Intersection In → Approach   (U-turn)
+  "7-5": 270.0   # Approach → Road (right = back)
+  "3-5":   0.0   # Open Space → Road

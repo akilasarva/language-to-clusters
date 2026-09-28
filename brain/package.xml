@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>brain</name>
+  <version>0.0.0</version>
+  <description>Brain controller — cluster-based navigation with VLM perception cues</description>
+  <maintainer email="akilasar@mit.edu">akilasar</maintainer>
+  <license>MIT</license>
+
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>std_srvs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <!-- Odometry, used ONLY for relative heading change on `topology` steps
+       (has the turn completed?). Never for metric goals. -->
+  <exec_depend>nav_msgs</exec_depend>
+  <!-- cv2 for JPEG-encoding camera frames for the VLM. This was previously
+       declared as python3-cv-bridge, which the code deliberately does NOT use
+       (imgmsg_to_bgr is hand-rolled to avoid the dependency). -->
+  <exec_depend>python3-opencv</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <!-- The OpenAI client for cue checks / branch decisions. Not available as a
+       rosdep key on all distros, so it is pinned in setup.py install_requires;
+       listed here for documentation. -->
+  <!-- <exec_depend>python3-openai</exec_depend> -->
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

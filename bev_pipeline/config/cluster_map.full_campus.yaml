@@ -1,0 +1,16 @@
+environment: full_campus
+modes:
+  Open Space:
+  - 0
+  'Road: On':
+  - 1
+  - 2
+  - 3
+  - 4
+  Along Wall:
+  - 2
+  Passage:
+  - 3
+  'Intersection: In':
+  - 4
+source: demo

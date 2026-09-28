@@ -1,0 +1,3 @@
+# Regenerable plot output — `scripts/map_regions.py` remakes it from the .xodr.
+config/*.png
+config/objects.*.camera.gen.json

@@ -1,0 +1,100 @@
+{
+ "town": "town05",
+ "cone_regions": [
+  54,
+  57,
+  60,
+  63,
+  65,
+  67,
+  70
+ ],
+ "cones": [
+  {
+   "id": "cone60",
+   "region": 60,
+   "x": -130.3,
+   "y": 1.12,
+   "z": 0.5
+  },
+  {
+   "id": "cone57",
+   "region": 57,
+   "x": -196.78,
+   "y": -96.21,
+   "z": 0.5,
+   "_note": "On the VERGE, not the junction centre. A cone at the centroid physically blocks (in the LiDAR EDT) the right exit it is cueing, so the vehicle cannot complete the turn its own cue selected. Bearing 225.9 deg, 9 m out: the midpoint of the widest gap between J57's four driving lines, 64 deg clear of the nearest, and well inside the 40 m cue radius."
+  },
+  {
+   "id": "cone54",
+   "region": 54,
+   "x": -50.51,
+   "y": -89.01,
+   "z": 0.5
+  },
+  {
+   "id": "cone63",
+   "region": 63,
+   "x": -49.6,
+   "y": -0.3,
+   "z": 0.5
+  },
+  {
+   "id": "cone70",
+   "region": 70,
+   "x": 35.89,
+   "y": -84.16,
+   "z": 0.5,
+   "type": "static.prop.constructioncone"
+  },
+  {
+   "id": "cone65",
+   "region": 65,
+   "x": -118.06,
+   "y": -82.52,
+   "z": 0.5,
+   "type": "static.prop.constructioncone"
+  },
+  {
+   "id": "cone67",
+   "region": 67,
+   "x": -258.39,
+   "y": -1.22,
+   "z": 0.5,
+   "type": "static.prop.constructioncone",
+   "_note": "J4 of the cone-ordinal corridor 0->63->1->60*->2->59->3->67*. Derived, not copied: 0.51 m clear of the drivable surface, matching cone57's 0.49 m and cone60's 0.62 m -- the verge, not the centroid. 8.75 m out on bearing 0 deg, i.e. the APPROACH side from region 3, so it is head-on visible and 28 m from that region's centroid, inside the 40 m cue radius. It is 101 deg off the RIGHT EXIT it cues (region 10, due north), so it cannot block that exit (see cone57's note). 131.7 m from cone60, so the two cones cannot bleed into each other's 40 m cue."
+  },
+  {
+   "id": "cone53",
+   "region": 53,
+   "x": -125.33,
+   "y": 89.32,
+   "z": 0.5
+  },
+  {
+   "id": "cone61",
+   "region": 61,
+   "x": -50.69,
+   "y": 90.66,
+   "z": 0.5,
+   "_note": "Cone at J61 (M5 right-arm world). Planar centroid, same frame as cone53/54/63. Appended only; cone_regions (count-addressed) untouched."
+  },
+  {
+   "id": "cone71",
+   "region": 71,
+   "x": -125.89,
+   "y": -144.33,
+   "z": 0.5,
+   "_note": "For the M5 cone-combination worlds. Planar centroid, append-only; cone_regions untouched."
+  },
+  {
+   "id": "cone62",
+   "region": 62,
+   "x": 30.68,
+   "y": 90.03,
+   "z": 0.5,
+   "_note": "For the M5 cone-combination worlds. Planar centroid, append-only; cone_regions untouched."
+  }
+ ],
+ "_note": "Addressed by --cone-regions, explicitly, per experiment. --cones N reads the SEPARATE `cone_regions` key and takes `regs[:N]` (drive_english.py), so --cones 1 spawns region 54. Appending a POSE to `cones` therefore does NOT move any count-addressed experiment; only editing `cone_regions` does. Prefer --cone-regions: a count hides WHICH junction is armed, and editing `cone_regions` for one mission silently moves the cones of every count-addressed mission. | 70 and 65 hold corner poses."
+}

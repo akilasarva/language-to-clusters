@@ -1,0 +1,118 @@
+{
+  "_comment": [
+    "Spawn config for the LABEL-CORPUS collection drive.",
+    "",
+    "WHY A SEPARATE FILE. objects.town01.json declares NO LiDAR at all and",
+    "objects.town05.json declares only sensor.lidar.ray_cast. Neither declares a",
+    "semantic LiDAR, so /carla/ego_vehicle/semantic_lidar would simply never appear and",
+    "the bag would record a topic list with a hole in it.",
+    "",
+    "THE TWO LIDARS MUST MATCH. ray_cast supplies the scan the classifier sees;",
+    "ray_cast_semantic supplies the ObjTag ground truth for the enclosure axis. They are",
+    "at the same spawn point with the same range, channels, fov and rotation_frequency",
+    "so the GT describes the same geometry the scan contains. Diverge them and every",
+    "enclosure disagreement is a sensor difference wearing a perception costume.",
+    "",
+    "FOV -12..+12, NOT -26.8..+2.0. The -26.8..+2.0 FOV stares at the road: 30 of 32",
+    "beams below horizontal. With upper_fov 2.0 the highest ray reaches only 2.87 m above",
+    "the road at 25 m, so a building facade is invisible past that, and the `above-road`",
+    "band (+1.49..+3.49 m above ground) is fed by 13 of 32 channels and only 4 at 25 m.",
+    "",
+    "WIDENING IS NOT THE FIX; RETARGETING IS. At a fixed 32 channels, -25..+15 spreads",
+    "the beams thinner (1.29 deg vs 0.93) and buys nothing at range. What is wasted is",
+    "the bottom: 17 of 32 beams hit tarmac within 10 m. -12..+12 reclaims them, improves",
+    "spacing to 0.77 deg, and takes `above-road` from 6 to 15 beams at 10 m and 4 to 6 at",
+    "25 m, with no change to channels, points_per_second or bag size.",
+    "",
+    "The cost is deliberate: the road is now only swept out to 9.4 m (2.0/tan(12 deg)).",
+    "The 72-bin feature reads structure, not tarmac -- but any check that assumes ground",
+    "returns at 25 m has to account for this.",
+    "",
+    "range 50 m, not 30: the classifier crops to its own max_lidar_range anyway, but the",
+    "GT wants to see a building before the vehicle is beside it -- `past_building` and",
+    "`around_building` are relations over approach and departure, not just abeam.",
+    "",
+    "NO CAMERAS. sensor.lidar.ray_cast is a physics raycast and works with",
+    "no_rendering_mode ON; only cameras need the renderer. Leaving them out keeps",
+    "rendering off, and nothing in the GT plan consumes an image.",
+    "",
+    "sensor.pseudo.odom is REQUIRED: without odometry there is no pose and no join from",
+    "a scan to a region.",
+    "",
+    "10 Hz, not 20: the classifier consumes ~10 Hz and the rate sets the bag size",
+    "directly (about 24 MB/s at 20 Hz).",
+    "",
+    "spawn_point is deliberately absent from ego_vehicle: the collection driver sets it",
+    "from route.<town>.json, and a hardcoded pose here would silently win."
+  ],
+  "objects": [
+    {
+      "type": "sensor.pseudo.actor_list",
+      "id": "actor_list"
+    },
+    {
+      "type": "sensor.pseudo.objects",
+      "id": "objects"
+    },
+    {
+      "type": "vehicle.tesla.model3",
+      "id": "ego_vehicle",
+      "role_name": "ego_vehicle",
+      "sensors": [
+        {
+          "type": "sensor.pseudo.odom",
+          "id": "odometry"
+        },
+        {
+          "type": "sensor.pseudo.speedometer",
+          "id": "speedometer"
+        },
+        {
+          "type": "sensor.pseudo.tf",
+          "id": "tf"
+        },
+        {
+          "type": "actor.pseudo.control",
+          "id": "control"
+        },
+        {
+          "type": "sensor.lidar.ray_cast",
+          "id": "lidar",
+          "spawn_point": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 2.0,
+            "roll": 0.0,
+            "pitch": 0.0,
+            "yaw": 0.0
+          },
+          "range": 50.0,
+          "channels": 32,
+          "points_per_second": 320000,
+          "rotation_frequency": 10,
+          "upper_fov": 12.0,
+          "lower_fov": -12.0,
+          "noise_stddev": 0.0
+        },
+        {
+          "type": "sensor.lidar.ray_cast_semantic",
+          "id": "semantic_lidar",
+          "spawn_point": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 2.0,
+            "roll": 0.0,
+            "pitch": 0.0,
+            "yaw": 0.0
+          },
+          "range": 50.0,
+          "channels": 32,
+          "points_per_second": 320000,
+          "rotation_frequency": 10,
+          "upper_fov": 12.0,
+          "lower_fov": -12.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+ "props": [
+  {
+   "id": "prop_49",
+   "region": 49,
+   "x": -123.29960168447838,
+   "y": -18.75224909474634,
+   "type": "static.prop.bench01"
+  },
+  {
+   "id": "prop_3",
+   "region": 3,
+   "x": -230.32688583257965,
+   "y": 4.859959207676973,
+   "type": "static.prop.bench01"
+  },
+  {
+   "id": "prop_58",
+   "region": 58,
+   "x": 98.41755441591359,
+   "y": -0.38478232741897994,
+   "type": "static.prop.bench01"
+  },
+  {
+   "id": "prop_59",
+   "region": 59,
+   "x": -186.97869555198798,
+   "y": 1.6497802346626598,
+   "type": "static.prop.bench01"
+  },
+  {
+   "id": "prop_12",
+   "region": 12,
+   "x": 205.67382882746182,
+   "y": 1.1304931656454993,
+   "type": "static.prop.bench01"
+  },
+  {
+   "id": "fountain1",
+   "region": 1,
+   "x": -86.7,
+   "y": -5.5,
+   "z": 0.5,
+   "type": "static.prop.fountain"
+  }
+ ],
+ "_note": "Terminal markers (benches) for missions that need a checkable stopping point. Addressed explicitly via --cone-regions; never picked up by --cones, which would change what CONES=1 means. | Benches at 70, 65, 57 are DECISION landmarks for the depth-3 mission, not terminal markers. Each carries its own `type`, because a run can need a cone at one junction and a bench at another. | Every entry carries an explicit `type`. Without it the family map defaults to cone, so a bench region would silently answer the cone cue and never the bench one. | fountain1 at region 1 -- the J60-J63 BOTTOM EDGE of block [53,60,63,61], mid-edge on purpose. Approach J63 from r18 (south, OFF-block) so both block edges stay available: direct = LEFT at J63 (+90.5) onto the edge; detour = straight to J61 then LEFT at J61 (+90.3), J53 (+88.0), J60 (+91.5), arriving on the same edge from the far end. Three real 90 deg turns. A CORNER destination would be reachable only by the blocked move, and J61 is a straight-through (+1.5) on the east block, so neither works as a siting."
+}

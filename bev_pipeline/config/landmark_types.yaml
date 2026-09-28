@@ -1,0 +1,33 @@
+# Shared landmark-type vocabulary for the BEV pipeline.
+#
+# Two authoring tiers:
+#   * THIS file (the vocabulary of KINDS) is hand-edited, once per deployment.
+#     Adding a genuinely new kind of landmark is a deliberate edit here.
+#   * Per-bag landmark INSTANCES live in <bag>.landmarks.yaml, authored via the
+#     GUI tool (tools/landmark_bbox_editor.py) or assigned directly by the VLM
+#     auto-labeler from the phase vocabulary below.
+#
+# kind selects the phase vocabulary a type uses:
+#   * pass_through : vehicle drives THROUGH  -> approach / on / exit
+#   * perimeter    : vehicle skirts AROUND   -> approach / along / exit  (no "on")
+# priority drives overlap tie-break at label time (higher wins; ties -> nearest
+# centroid). open_road_priority is the floor when no landmark is active.
+
+types:
+  bridge:       {kind: pass_through, priority: 10}
+  ramp:         {kind: pass_through, priority: 10}
+  gate:         {kind: pass_through, priority: 10}
+  intersection: {kind: pass_through, priority: 9}
+  building:     {kind: perimeter,    priority: 8}
+
+open_road_priority: 0
+
+# Phase vocabulary per kind (used to enumerate the closed label set).
+# NOTE: quote every token — YAML 1.1 parses bare `on`/`off`/`yes`/`no` as
+# booleans, which would silently turn the "on" phase into True_<type>.
+phases:
+  pass_through: ["approach", "on", "exit"]
+  perimeter:    ["approach", "along", "exit"]
+
+# The "no active landmark" label.
+open_label: open_road

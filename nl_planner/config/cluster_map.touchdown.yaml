@@ -1,0 +1,22 @@
+# Touchdown (Cornell, Street View NYC) — a MINIMAL vocabulary for a TRANSLATION-ONLY study.
+#
+# WHAT THIS IS FOR, AND WHAT IT IS NOT. It supports one question: on externally written
+# instructions, does the generator EMIT the structure the English demands -- specifically
+# `cue_ordinal` for "turn left at the third intersection"? That is scoreable from the text
+# alone.
+#
+# IT IS NOT A MAP. There is no Street View graph here, the cluster ids are synthetic, and
+# nothing grounds to a real place. So GROUNDED and RESOLVED are undefined on Touchdown and
+# must not be reported from it -- only PRODUCED. Grounding is evaluated on corpora with a
+# real cluster map.
+#
+# WHY path / junction. Street navigation maps onto them exactly: streets and blocks are
+# things you travel ALONG (extent modes, so `path -> path` is legal, which is the encoding
+# for "stop at the 2nd X"), intersections are things you pass THROUGH. Landmarks --
+# awnings, traffic lights, planters -- are not modes; they are `transition_cue` text, which
+# is what they are in the other corpora too.
+environment: touchdown
+
+modes:
+  path:     [0]
+  junction: [1]

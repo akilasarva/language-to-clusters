@@ -1,0 +1,21 @@
+environment: full_campus_1hz
+modes:
+  'Wall: Along':
+  - 0
+  Corridor:
+  - 1
+  Covered:
+  - 2
+  'Approach: Junction':
+  - 3
+  'Exit: Junction':
+  - 4
+  'In: Junction':
+  - 5
+  'Space: Open':
+  - 6
+  Other:
+  - 7
+  'On: Path':
+  - 8
+source: bev_pipeline compare_extractors, winner=geom_features

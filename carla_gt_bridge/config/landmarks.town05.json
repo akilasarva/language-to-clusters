@@ -1,0 +1,842 @@
+{
+ "town": "town05",
+ "_note": "MAP-NATIVE landmarks: present in every world, never spawned. Read by gt_cue_node as a REGION-SCOPED answer, because /carla/objects does not publish poses for these actors (the log says '0 located' while the actor list knows their ids), so proximity can never be computed from it. Deliberately NOT named cones.*/props.*: those globs feed _region_family, which names the families that can be SPAWNED, and the absent-family short-circuit keys off it -- adding lights there would make a spawned cone answer traffic_light=False all over again. One key per family; gt_cue_node._load_native_landmarks reads every list-valued key, so a new family needs no code change on the reading side.",
+ "traffic_light": [
+  {
+   "id": 137,
+   "region": 64,
+   "x": 19.15,
+   "y": -12.0,
+   "z": 0.0,
+   "dist_m": 2.77,
+   "label": "junction"
+  },
+  {
+   "id": 136,
+   "region": 64,
+   "x": 18.6,
+   "y": 9.95,
+   "z": 0.0,
+   "dist_m": 2.63,
+   "label": "junction"
+  },
+  {
+   "id": 135,
+   "region": 64,
+   "x": 40.25,
+   "y": 11.1,
+   "z": 0.0,
+   "dist_m": 2.59,
+   "label": "junction"
+  },
+  {
+   "id": 134,
+   "region": 64,
+   "x": 40.9,
+   "y": -10.5,
+   "z": 0.0,
+   "dist_m": 2.51,
+   "label": "junction"
+  },
+  {
+   "id": 133,
+   "region": 68,
+   "x": 47.95,
+   "y": 197.35,
+   "z": 0.0,
+   "dist_m": 1.57,
+   "label": "junction"
+  },
+  {
+   "id": 132,
+   "region": 68,
+   "x": 46.35,
+   "y": 178.5,
+   "z": 0.0,
+   "dist_m": 8.67,
+   "label": "junction"
+  },
+  {
+   "id": 131,
+   "region": 73,
+   "x": 15.65,
+   "y": -197.95,
+   "z": 0.0,
+   "dist_m": 1.96,
+   "label": "junction"
+  },
+  {
+   "id": 130,
+   "region": 73,
+   "x": 17.25,
+   "y": -177.4,
+   "z": 0.0,
+   "dist_m": 4.96,
+   "label": "junction"
+  },
+  {
+   "id": 129,
+   "region": 70,
+   "x": 19.15,
+   "y": -101.7,
+   "z": 0.0,
+   "dist_m": 3.05,
+   "label": "junction"
+  },
+  {
+   "id": 128,
+   "region": 73,
+   "x": 40.85,
+   "y": -216.35,
+   "z": 0.0,
+   "dist_m": 16.33,
+   "label": "junction"
+  },
+  {
+   "id": 127,
+   "region": 66,
+   "x": -112.766,
+   "y": 150.95,
+   "z": 0.0,
+   "dist_m": 10.52,
+   "label": "junction"
+  },
+  {
+   "id": 126,
+   "region": 66,
+   "x": -112.966,
+   "y": 128.849,
+   "z": -0.0,
+   "dist_m": 2.89,
+   "label": "junction"
+  },
+  {
+   "id": 125,
+   "region": 71,
+   "x": -138.8,
+   "y": -159.55,
+   "z": 0.0,
+   "dist_m": 10.24,
+   "label": "junction"
+  },
+  {
+   "id": 124,
+   "region": 71,
+   "x": -138.5,
+   "y": -137.55,
+   "z": 0.0,
+   "dist_m": 3.07,
+   "label": "junction"
+  },
+  {
+   "id": 123,
+   "region": 71,
+   "x": -112.3,
+   "y": -159.4,
+   "z": 0.0,
+   "dist_m": 9.97,
+   "label": "junction"
+  },
+  {
+   "id": 122,
+   "region": 59,
+   "x": -201.55,
+   "y": -12.45,
+   "z": 0.0,
+   "dist_m": 3.44,
+   "label": "junction"
+  },
+  {
+   "id": 121,
+   "region": 59,
+   "x": -201.4,
+   "y": 10.3,
+   "z": 0.0,
+   "dist_m": 3.64,
+   "label": "junction"
+  },
+  {
+   "id": 120,
+   "region": 70,
+   "x": 18.6,
+   "y": -79.75,
+   "z": 0.0,
+   "dist_m": 2.27,
+   "label": "junction"
+  },
+  {
+   "id": 119,
+   "region": 45,
+   "x": -143.039,
+   "y": 150.02,
+   "z": 0.0,
+   "dist_m": 9.32,
+   "label": "path"
+  },
+  {
+   "id": 118,
+   "region": 59,
+   "x": -179.25,
+   "y": 9.7,
+   "z": 0.0,
+   "dist_m": 2.46,
+   "label": "junction"
+  },
+  {
+   "id": 117,
+   "region": 59,
+   "x": -179.35,
+   "y": -12.45,
+   "z": 0.0,
+   "dist_m": 2.61,
+   "label": "junction"
+  },
+  {
+   "id": 116,
+   "region": 65,
+   "x": -138.8,
+   "y": -100.05,
+   "z": 0.0,
+   "dist_m": 2.19,
+   "label": "junction"
+  },
+  {
+   "id": 115,
+   "region": 65,
+   "x": -139.8,
+   "y": -77.85,
+   "z": 0.0,
+   "dist_m": 3.74,
+   "label": "junction"
+  },
+  {
+   "id": 114,
+   "region": 65,
+   "x": -113.4,
+   "y": -78.0,
+   "z": 0.0,
+   "dist_m": 2.17,
+   "label": "junction"
+  },
+  {
+   "id": 113,
+   "region": 65,
+   "x": -112.3,
+   "y": -101.1,
+   "z": 0.0,
+   "dist_m": 2.94,
+   "label": "junction"
+  },
+  {
+   "id": 112,
+   "region": 54,
+   "x": -61.35,
+   "y": -101.25,
+   "z": 0.0,
+   "dist_m": 3.32,
+   "label": "junction"
+  },
+  {
+   "id": 111,
+   "region": 54,
+   "x": -61.25,
+   "y": -76.7,
+   "z": 0.0,
+   "dist_m": 4.57,
+   "label": "junction"
+  },
+  {
+   "id": 110,
+   "region": 54,
+   "x": -37.45,
+   "y": -78.0,
+   "z": 0.0,
+   "dist_m": 4.02,
+   "label": "junction"
+  },
+  {
+   "id": 109,
+   "region": 54,
+   "x": -38.65,
+   "y": -100.05,
+   "z": 0.0,
+   "dist_m": 2.73,
+   "label": "junction"
+  },
+  {
+   "id": 108,
+   "region": 70,
+   "x": 40.25,
+   "y": -78.6,
+   "z": 0.0,
+   "dist_m": 2.22,
+   "label": "junction"
+  },
+  {
+   "id": 107,
+   "region": 63,
+   "x": -59.6,
+   "y": -12.45,
+   "z": 0.0,
+   "dist_m": 3.01,
+   "label": "junction"
+  },
+  {
+   "id": 106,
+   "region": 63,
+   "x": -60.7,
+   "y": 9.5,
+   "z": 0.0,
+   "dist_m": 2.7,
+   "label": "junction"
+  },
+  {
+   "id": 105,
+   "region": 63,
+   "x": -38.6,
+   "y": 9.65,
+   "z": 0.0,
+   "dist_m": 2.26,
+   "label": "junction"
+  },
+  {
+   "id": 104,
+   "region": 63,
+   "x": -38.55,
+   "y": -11.6,
+   "z": 0.0,
+   "dist_m": 2.1,
+   "label": "junction"
+  },
+  {
+   "id": 103,
+   "region": 60,
+   "x": -140.4,
+   "y": -12.45,
+   "z": 0.0,
+   "dist_m": 3.41,
+   "label": "junction"
+  },
+  {
+   "id": 102,
+   "region": 60,
+   "x": -139.35,
+   "y": 10.3,
+   "z": 0.0,
+   "dist_m": 1.96,
+   "label": "junction"
+  },
+  {
+   "id": 101,
+   "region": 60,
+   "x": -113.9,
+   "y": 9.65,
+   "z": 0.0,
+   "dist_m": 2.19,
+   "label": "junction"
+  },
+  {
+   "id": 100,
+   "region": 60,
+   "x": -113.15,
+   "y": -11.6,
+   "z": 0.0,
+   "dist_m": 2.27,
+   "label": "junction"
+  },
+  {
+   "id": 99,
+   "region": 53,
+   "x": -140.4,
+   "y": 78.1,
+   "z": 0.0,
+   "dist_m": 3.69,
+   "label": "junction"
+  },
+  {
+   "id": 98,
+   "region": 53,
+   "x": -139.35,
+   "y": 100.85,
+   "z": 0.0,
+   "dist_m": 2.53,
+   "label": "junction"
+  },
+  {
+   "id": 97,
+   "region": 53,
+   "x": -112.8,
+   "y": 101.3,
+   "z": 0.0,
+   "dist_m": 3.11,
+   "label": "junction"
+  },
+  {
+   "id": 96,
+   "region": 53,
+   "x": -113.15,
+   "y": 78.95,
+   "z": 0.0,
+   "dist_m": 2.54,
+   "label": "junction"
+  },
+  {
+   "id": 95,
+   "region": 61,
+   "x": -61.15,
+   "y": 78.1,
+   "z": 0.0,
+   "dist_m": 2.91,
+   "label": "junction"
+  },
+  {
+   "id": 94,
+   "region": 61,
+   "x": -62.8,
+   "y": 101.8,
+   "z": 0.0,
+   "dist_m": 3.63,
+   "label": "junction"
+  },
+  {
+   "id": 93,
+   "region": 61,
+   "x": -38.85,
+   "y": 101.3,
+   "z": 0.0,
+   "dist_m": 2.92,
+   "label": "junction"
+  },
+  {
+   "id": 92,
+   "region": 61,
+   "x": -39.6,
+   "y": 78.1,
+   "z": 0.0,
+   "dist_m": 2.23,
+   "label": "junction"
+  },
+  {
+   "id": 91,
+   "region": 62,
+   "x": 21.25,
+   "y": 78.85,
+   "z": 0.0,
+   "dist_m": 1.94,
+   "label": "junction"
+  },
+  {
+   "id": 90,
+   "region": 68,
+   "x": 22.75,
+   "y": 215.15,
+   "z": 0.0,
+   "dist_m": 16.36,
+   "label": "junction"
+  },
+  {
+   "id": 89,
+   "region": 62,
+   "x": 20.25,
+   "y": 99.9,
+   "z": 0.0,
+   "dist_m": 2.61,
+   "label": "junction"
+  },
+  {
+   "id": 88,
+   "region": 62,
+   "x": 41.85,
+   "y": 100.2,
+   "z": 0.0,
+   "dist_m": 1.98,
+   "label": "junction"
+  },
+  {
+   "id": 87,
+   "region": 62,
+   "x": 41.4,
+   "y": 78.1,
+   "z": 0.0,
+   "dist_m": 2.39,
+   "label": "junction"
+  },
+  {
+   "id": 86,
+   "region": 70,
+   "x": 42.55,
+   "y": -100.2,
+   "z": 0.0,
+   "dist_m": 2.41,
+   "label": "junction"
+  },
+  {
+   "id": 85,
+   "region": 72,
+   "x": 43.9,
+   "y": 158.2,
+   "z": 0.2,
+   "dist_m": 6.9,
+   "label": "junction"
+  },
+  {
+   "id": 84,
+   "region": 72,
+   "x": 23.327,
+   "y": 154.4,
+   "z": 0.1,
+   "dist_m": 9.99,
+   "label": "junction"
+  }
+ ],
+ "stop_sign": [
+  {
+   "id": 63,
+   "region": 48,
+   "x": 115.165,
+   "y": 2.025,
+   "z": 0.017,
+   "dist_m": 1.95,
+   "label": "path"
+  },
+  {
+   "id": 62,
+   "region": 20,
+   "x": 155.139,
+   "y": -15.275,
+   "z": 0.038,
+   "dist_m": 2.11,
+   "label": "path"
+  },
+  {
+   "id": 61,
+   "region": 58,
+   "x": 96.281,
+   "y": 14.339,
+   "z": 0.0,
+   "dist_m": 2.81,
+   "label": "junction"
+  },
+  {
+   "id": 60,
+   "region": 33,
+   "x": 99.997,
+   "y": 14.271,
+   "z": 0.0,
+   "dist_m": 1.93,
+   "label": "path"
+  },
+  {
+   "id": 59,
+   "region": 58,
+   "x": 88.856,
+   "y": -2.008,
+   "z": 0.0,
+   "dist_m": 1.7,
+   "label": "junction"
+  },
+  {
+   "id": 58,
+   "region": 58,
+   "x": 88.839,
+   "y": -5.521,
+   "z": 0.0,
+   "dist_m": 1.83,
+   "label": "junction"
+  },
+  {
+   "id": 57,
+   "region": 30,
+   "x": 103.273,
+   "y": -13.934,
+   "z": -0.0,
+   "dist_m": 1.92,
+   "label": "path"
+  },
+  {
+   "id": 56,
+   "region": 3,
+   "x": -256.469,
+   "y": 0.304,
+   "z": 0.0,
+   "dist_m": 1.73,
+   "label": "path"
+  },
+  {
+   "id": 55,
+   "region": 10,
+   "x": -272.192,
+   "y": 15.06,
+   "z": 0.0,
+   "dist_m": 1.77,
+   "label": "path"
+  },
+  {
+   "id": 54,
+   "region": 58,
+   "x": 106.767,
+   "y": -14.1,
+   "z": 0.0,
+   "dist_m": 2.15,
+   "label": "junction"
+  },
+  {
+   "id": 53,
+   "region": 11,
+   "x": -268.994,
+   "y": -18.56,
+   "z": 0.0,
+   "dist_m": 1.77,
+   "label": "path"
+  },
+  {
+   "id": 52,
+   "region": 42,
+   "x": -188.036,
+   "y": -105.516,
+   "z": 0.055,
+   "dist_m": 1.76,
+   "label": "path"
+  },
+  {
+   "id": 51,
+   "region": 57,
+   "x": -184.421,
+   "y": -105.425,
+   "z": 0.056,
+   "dist_m": 2.29,
+   "label": "junction"
+  },
+  {
+   "id": 50,
+   "region": 57,
+   "x": -195.085,
+   "y": -73.48,
+   "z": 0.055,
+   "dist_m": 1.81,
+   "label": "junction"
+  },
+  {
+   "id": 49,
+   "region": 57,
+   "x": -191.549,
+   "y": -73.474,
+   "z": 0.055,
+   "dist_m": 1.77,
+   "label": "junction"
+  },
+  {
+   "id": 48,
+   "region": 57,
+   "x": -205.269,
+   "y": -94.945,
+   "z": 0.0,
+   "dist_m": 2.19,
+   "label": "junction"
+  },
+  {
+   "id": 47,
+   "region": 24,
+   "x": -205.414,
+   "y": -91.087,
+   "z": 0.0,
+   "dist_m": 1.66,
+   "label": "path"
+  },
+  {
+   "id": 46,
+   "region": 57,
+   "x": -174.012,
+   "y": -87.973,
+   "z": 0.0,
+   "dist_m": 1.65,
+   "label": "junction"
+  },
+  {
+   "id": 45,
+   "region": 57,
+   "x": -174.074,
+   "y": -84.31,
+   "z": 0.0,
+   "dist_m": 1.81,
+   "label": "junction"
+  },
+  {
+   "id": 44,
+   "region": 56,
+   "x": -195.296,
+   "y": 105.828,
+   "z": 0.055,
+   "dist_m": 1.97,
+   "label": "junction"
+  },
+  {
+   "id": 43,
+   "region": 56,
+   "x": -191.645,
+   "y": 105.688,
+   "z": 0.055,
+   "dist_m": 1.71,
+   "label": "junction"
+  },
+  {
+   "id": 42,
+   "region": 56,
+   "x": -187.968,
+   "y": 75.541,
+   "z": 0.056,
+   "dist_m": 1.65,
+   "label": "junction"
+  },
+  {
+   "id": 41,
+   "region": 56,
+   "x": -184.686,
+   "y": 75.602,
+   "z": 0.056,
+   "dist_m": 1.69,
+   "label": "junction"
+  },
+  {
+   "id": 40,
+   "region": 56,
+   "x": -174.429,
+   "y": 94.978,
+   "z": 0.0,
+   "dist_m": 1.8,
+   "label": "junction"
+  },
+  {
+   "id": 39,
+   "region": 56,
+   "x": -174.338,
+   "y": 91.53,
+   "z": 0.0,
+   "dist_m": 1.7,
+   "label": "junction"
+  },
+  {
+   "id": 38,
+   "region": 56,
+   "x": -203.918,
+   "y": 84.634,
+   "z": 0.0,
+   "dist_m": 2.31,
+   "label": "junction"
+  },
+  {
+   "id": 37,
+   "region": 9,
+   "x": -203.848,
+   "y": 88.267,
+   "z": 0.0,
+   "dist_m": 1.8,
+   "label": "path"
+  },
+  {
+   "id": 36,
+   "region": 19,
+   "x": 151.395,
+   "y": 16.165,
+   "z": 0.039,
+   "dist_m": 1.92,
+   "label": "path"
+  },
+  {
+   "id": 29,
+   "region": 67,
+   "x": -261.006,
+   "y": -17.968,
+   "z": 0.152,
+   "dist_m": 4.62,
+   "label": "junction"
+  },
+  {
+   "id": 28,
+   "region": 69,
+   "x": 42.7,
+   "y": -136.7,
+   "z": 0.2,
+   "dist_m": 1.07,
+   "label": "junction"
+  },
+  {
+   "id": 27,
+   "region": 55,
+   "x": 142.235,
+   "y": -6.049,
+   "z": 0.169,
+   "dist_m": 0.89,
+   "label": "junction"
+  },
+  {
+   "id": 26,
+   "region": 10,
+   "x": -279.638,
+   "y": 15.162,
+   "z": 0.152,
+   "dist_m": 9.21,
+   "label": "path"
+  },
+  {
+   "id": 25,
+   "region": 67,
+   "x": -257.109,
+   "y": 8.83,
+   "z": 0.152,
+   "dist_m": 2.88,
+   "label": "junction"
+  }
+ ],
+ "overpass": [
+  {
+   "region": 7,
+   "x": -105.54,
+   "y": 95.05,
+   "deck_z": 9.22,
+   "clearance_m": 8.78,
+   "label": "path"
+  },
+  {
+   "region": 39,
+   "x": 49.4,
+   "y": 5.22,
+   "deck_z": 7.82,
+   "clearance_m": 6.33,
+   "label": "path"
+  },
+  {
+   "region": 42,
+   "x": -181.6,
+   "y": -129.75,
+   "deck_z": 10.69,
+   "clearance_m": 9.13,
+   "label": "path"
+  },
+  {
+   "region": 47,
+   "x": -54.65,
+   "y": 31.74,
+   "deck_z": 8.5,
+   "clearance_m": 8.19,
+   "label": "path"
+  },
+  {
+   "region": 58,
+   "x": 84.56,
+   "y": 5.07,
+   "deck_z": 7.82,
+   "clearance_m": 6.33,
+   "label": "junction"
+  },
+  {
+   "region": 64,
+   "x": 35.87,
+   "y": 8.41,
+   "deck_z": 7.82,
+   "clearance_m": 6.33,
+   "label": "junction"
+  }
+ ],
+ "_note_overpass": "Regions that pass UNDER a building deck. NOT from CityObjectLabel.Bridge -- Town05's overpasses on the J58-J64 corridor are Buildings spanning the carriageway, and the Bridge label returns 0 boxes there. Region-scoped like traffic_light/stop_sign: gt_cue_node answers it by membership, so it needs no pose topic."
+}

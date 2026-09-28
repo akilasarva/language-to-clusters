@@ -1,0 +1,769 @@
+{
+ "_source": "CARLA 0.9.14 Town05, world.get_blueprint_library().filter('static.prop.*')",
+ "_note": "extent is the actor bounding box half-size in metres; frontal_m2 = (2*max(x,y))*(2*z). It is a SHORTLIST proxy, not legibility: frame props (pergola, clothesline) are mostly air. static.prop.mesh is excluded: it reports infinite extent.",
+ "excluded": [
+  "static.prop.mesh"
+ ],
+ "props": [
+  {
+   "id": "static.prop.advertisement",
+   "x": 0.775,
+   "y": 0.143,
+   "z": 1.221,
+   "height_m": 2.44,
+   "frontal_m2": 3.785
+  },
+  {
+   "id": "static.prop.atm",
+   "x": 0.357,
+   "y": 0.437,
+   "z": 1.138,
+   "height_m": 2.28,
+   "frontal_m2": 1.989
+  },
+  {
+   "id": "static.prop.barbeque",
+   "x": 0.473,
+   "y": 0.249,
+   "z": 0.632,
+   "height_m": 1.26,
+   "frontal_m2": 1.195
+  },
+  {
+   "id": "static.prop.barrel",
+   "x": 0.23,
+   "y": 0.236,
+   "z": 0.403,
+   "height_m": 0.81,
+   "frontal_m2": 0.38
+  },
+  {
+   "id": "static.prop.bench01",
+   "x": 0.772,
+   "y": 0.368,
+   "z": 0.485,
+   "height_m": 0.97,
+   "frontal_m2": 1.497
+  },
+  {
+   "id": "static.prop.bench02",
+   "x": 0.782,
+   "y": 0.272,
+   "z": 0.255,
+   "height_m": 0.51,
+   "frontal_m2": 0.796
+  },
+  {
+   "id": "static.prop.bench03",
+   "x": 0.792,
+   "y": 0.256,
+   "z": 0.256,
+   "height_m": 0.51,
+   "frontal_m2": 0.812
+  },
+  {
+   "id": "static.prop.bike helmet",
+   "x": 0.093,
+   "y": 0.139,
+   "z": 0.086,
+   "height_m": 0.17,
+   "frontal_m2": 0.047
+  },
+  {
+   "id": "static.prop.bin",
+   "x": 0.274,
+   "y": 0.319,
+   "z": 0.53,
+   "height_m": 1.06,
+   "frontal_m2": 0.676
+  },
+  {
+   "id": "static.prop.box01",
+   "x": 0.326,
+   "y": 0.326,
+   "z": 0.346,
+   "height_m": 0.69,
+   "frontal_m2": 0.451
+  },
+  {
+   "id": "static.prop.box02",
+   "x": 0.324,
+   "y": 0.324,
+   "z": 0.324,
+   "height_m": 0.65,
+   "frontal_m2": 0.421
+  },
+  {
+   "id": "static.prop.box03",
+   "x": 0.33,
+   "y": 0.335,
+   "z": 0.324,
+   "height_m": 0.65,
+   "frontal_m2": 0.435
+  },
+  {
+   "id": "static.prop.briefcase",
+   "x": 0.272,
+   "y": 0.091,
+   "z": 0.216,
+   "height_m": 0.43,
+   "frontal_m2": 0.235
+  },
+  {
+   "id": "static.prop.brokentile01",
+   "x": 0.067,
+   "y": 0.088,
+   "z": 0.003,
+   "height_m": 0.01,
+   "frontal_m2": 0.001
+  },
+  {
+   "id": "static.prop.brokentile02",
+   "x": 0.105,
+   "y": 0.076,
+   "z": 0.004,
+   "height_m": 0.01,
+   "frontal_m2": 0.002
+  },
+  {
+   "id": "static.prop.brokentile03",
+   "x": 0.077,
+   "y": 0.072,
+   "z": 0.004,
+   "height_m": 0.01,
+   "frontal_m2": 0.001
+  },
+  {
+   "id": "static.prop.brokentile04",
+   "x": 0.065,
+   "y": 0.063,
+   "z": 0.005,
+   "height_m": 0.01,
+   "frontal_m2": 0.001
+  },
+  {
+   "id": "static.prop.busstop",
+   "x": 1.938,
+   "y": 0.947,
+   "z": 1.369,
+   "height_m": 2.74,
+   "frontal_m2": 10.616
+  },
+  {
+   "id": "static.prop.busstoplb",
+   "x": 0.947,
+   "y": 1.938,
+   "z": 1.369,
+   "height_m": 2.74,
+   "frontal_m2": 10.616
+  },
+  {
+   "id": "static.prop.calibrator",
+   "x": 0.774,
+   "y": 0.345,
+   "z": 0.101,
+   "height_m": 0.2,
+   "frontal_m2": 0.313
+  },
+  {
+   "id": "static.prop.chainbarrier",
+   "x": 0.747,
+   "y": 0.119,
+   "z": 0.444,
+   "height_m": 0.89,
+   "frontal_m2": 1.328
+  },
+  {
+   "id": "static.prop.chainbarrierend",
+   "x": 0.119,
+   "y": 0.119,
+   "z": 0.444,
+   "height_m": 0.89,
+   "frontal_m2": 0.212
+  },
+  {
+   "id": "static.prop.clothcontainer",
+   "x": 0.62,
+   "y": 0.943,
+   "z": 0.905,
+   "height_m": 1.81,
+   "frontal_m2": 3.415
+  },
+  {
+   "id": "static.prop.clothesline",
+   "x": 3.326,
+   "y": 0.559,
+   "z": 1.031,
+   "height_m": 2.06,
+   "frontal_m2": 13.711
+  },
+  {
+   "id": "static.prop.colacan",
+   "x": 0.034,
+   "y": 0.036,
+   "z": 0.055,
+   "height_m": 0.11,
+   "frontal_m2": 0.008
+  },
+  {
+   "id": "static.prop.constructioncone",
+   "x": 0.172,
+   "y": 0.172,
+   "z": 0.293,
+   "height_m": 0.59,
+   "frontal_m2": 0.202
+  },
+  {
+   "id": "static.prop.container",
+   "x": 0.966,
+   "y": 0.506,
+   "z": 0.857,
+   "height_m": 1.71,
+   "frontal_m2": 3.312
+  },
+  {
+   "id": "static.prop.creasedbox01",
+   "x": 0.404,
+   "y": 0.356,
+   "z": 0.059,
+   "height_m": 0.12,
+   "frontal_m2": 0.095
+  },
+  {
+   "id": "static.prop.creasedbox02",
+   "x": 0.817,
+   "y": 0.356,
+   "z": 0.106,
+   "height_m": 0.21,
+   "frontal_m2": 0.346
+  },
+  {
+   "id": "static.prop.creasedbox03",
+   "x": 0.834,
+   "y": 0.356,
+   "z": 0.011,
+   "height_m": 0.02,
+   "frontal_m2": 0.036
+  },
+  {
+   "id": "static.prop.dirtdebris01",
+   "x": 0.929,
+   "y": 0.757,
+   "z": 0.074,
+   "height_m": 0.15,
+   "frontal_m2": 0.277
+  },
+  {
+   "id": "static.prop.dirtdebris02",
+   "x": 0.929,
+   "y": 0.757,
+   "z": 0.074,
+   "height_m": 0.15,
+   "frontal_m2": 0.277
+  },
+  {
+   "id": "static.prop.dirtdebris03",
+   "x": 0.929,
+   "y": 0.757,
+   "z": 0.094,
+   "height_m": 0.19,
+   "frontal_m2": 0.35
+  },
+  {
+   "id": "static.prop.doghouse",
+   "x": 0.54,
+   "y": 0.636,
+   "z": 0.547,
+   "height_m": 1.09,
+   "frontal_m2": 1.391
+  },
+  {
+   "id": "static.prop.foodcart",
+   "x": 1.142,
+   "y": 2.319,
+   "z": 1.787,
+   "height_m": 3.57,
+   "frontal_m2": 16.574
+  },
+  {
+   "id": "static.prop.fountain",
+   "x": 4.201,
+   "y": 4.201,
+   "z": 3.462,
+   "height_m": 6.92,
+   "frontal_m2": 58.178
+  },
+  {
+   "id": "static.prop.garbage01",
+   "x": 0.027,
+   "y": 0.027,
+   "z": 0.043,
+   "height_m": 0.09,
+   "frontal_m2": 0.005
+  },
+  {
+   "id": "static.prop.garbage02",
+   "x": 0.027,
+   "y": 0.027,
+   "z": 0.005,
+   "height_m": 0.01,
+   "frontal_m2": 0.0
+  },
+  {
+   "id": "static.prop.garbage03",
+   "x": 0.03,
+   "y": 0.03,
+   "z": 0.04,
+   "height_m": 0.08,
+   "frontal_m2": 0.005
+  },
+  {
+   "id": "static.prop.garbage04",
+   "x": 0.029,
+   "y": 0.028,
+   "z": 0.034,
+   "height_m": 0.07,
+   "frontal_m2": 0.004
+  },
+  {
+   "id": "static.prop.garbage05",
+   "x": 0.116,
+   "y": 0.116,
+   "z": 0.029,
+   "height_m": 0.06,
+   "frontal_m2": 0.013
+  },
+  {
+   "id": "static.prop.garbage06",
+   "x": 0.183,
+   "y": 0.107,
+   "z": 0.038,
+   "height_m": 0.08,
+   "frontal_m2": 0.028
+  },
+  {
+   "id": "static.prop.gardenlamp",
+   "x": 0.149,
+   "y": 0.141,
+   "z": 0.324,
+   "height_m": 0.65,
+   "frontal_m2": 0.193
+  },
+  {
+   "id": "static.prop.glasscontainer",
+   "x": 0.977,
+   "y": 1.004,
+   "z": 0.894,
+   "height_m": 1.79,
+   "frontal_m2": 3.593
+  },
+  {
+   "id": "static.prop.gnome",
+   "x": 0.183,
+   "y": 0.188,
+   "z": 0.442,
+   "height_m": 0.88,
+   "frontal_m2": 0.332
+  },
+  {
+   "id": "static.prop.guitarcase",
+   "x": 0.621,
+   "y": 0.063,
+   "z": 0.247,
+   "height_m": 0.49,
+   "frontal_m2": 0.614
+  },
+  {
+   "id": "static.prop.haybale",
+   "x": 0.624,
+   "y": 0.597,
+   "z": 0.597,
+   "height_m": 1.19,
+   "frontal_m2": 1.491
+  },
+  {
+   "id": "static.prop.haybalelb",
+   "x": 0.624,
+   "y": 0.597,
+   "z": 0.597,
+   "height_m": 1.19,
+   "frontal_m2": 1.491
+  },
+  {
+   "id": "static.prop.ironplank",
+   "x": 0.726,
+   "y": 0.587,
+   "z": 0.01,
+   "height_m": 0.02,
+   "frontal_m2": 0.03
+  },
+  {
+   "id": "static.prop.kiosk_01",
+   "x": 0.813,
+   "y": 0.827,
+   "z": 1.623,
+   "height_m": 3.25,
+   "frontal_m2": 5.368
+  },
+  {
+   "id": "static.prop.mailbox",
+   "x": 0.263,
+   "y": 0.219,
+   "z": 0.579,
+   "height_m": 1.16,
+   "frontal_m2": 0.609
+  },
+  {
+   "id": "static.prop.maptable",
+   "x": 0.787,
+   "y": 0.309,
+   "z": 0.591,
+   "height_m": 1.18,
+   "frontal_m2": 1.858
+  },
+  {
+   "id": "static.prop.mobile",
+   "x": 0.04,
+   "y": 0.004,
+   "z": 0.083,
+   "height_m": 0.17,
+   "frontal_m2": 0.013
+  },
+  {
+   "id": "static.prop.motorhelmet",
+   "x": 0.1,
+   "y": 0.13,
+   "z": 0.129,
+   "height_m": 0.26,
+   "frontal_m2": 0.067
+  },
+  {
+   "id": "static.prop.pergola",
+   "x": 2.515,
+   "y": 2.543,
+   "z": 1.771,
+   "height_m": 3.54,
+   "frontal_m2": 18.009
+  },
+  {
+   "id": "static.prop.plantpot01",
+   "x": 0.545,
+   "y": 0.238,
+   "z": 0.279,
+   "height_m": 0.56,
+   "frontal_m2": 0.607
+  },
+  {
+   "id": "static.prop.plantpot02",
+   "x": 0.526,
+   "y": 0.215,
+   "z": 0.243,
+   "height_m": 0.49,
+   "frontal_m2": 0.512
+  },
+  {
+   "id": "static.prop.plantpot03",
+   "x": 0.526,
+   "y": 0.215,
+   "z": 0.243,
+   "height_m": 0.49,
+   "frontal_m2": 0.512
+  },
+  {
+   "id": "static.prop.plantpot04",
+   "x": 2.484,
+   "y": 0.368,
+   "z": 0.062,
+   "height_m": 0.12,
+   "frontal_m2": 0.62
+  },
+  {
+   "id": "static.prop.plantpot05",
+   "x": 0.2,
+   "y": 0.2,
+   "z": 0.14,
+   "height_m": 0.28,
+   "frontal_m2": 0.112
+  },
+  {
+   "id": "static.prop.plantpot06",
+   "x": 0.797,
+   "y": 0.797,
+   "z": 0.425,
+   "height_m": 0.85,
+   "frontal_m2": 1.354
+  },
+  {
+   "id": "static.prop.plantpot07",
+   "x": 0.247,
+   "y": 0.238,
+   "z": 0.279,
+   "height_m": 0.56,
+   "frontal_m2": 0.276
+  },
+  {
+   "id": "static.prop.plantpot08",
+   "x": 0.265,
+   "y": 0.265,
+   "z": 0.244,
+   "height_m": 0.49,
+   "frontal_m2": 0.259
+  },
+  {
+   "id": "static.prop.plasticbag",
+   "x": 0.155,
+   "y": 0.201,
+   "z": 0.276,
+   "height_m": 0.55,
+   "frontal_m2": 0.222
+  },
+  {
+   "id": "static.prop.plasticchair",
+   "x": 0.365,
+   "y": 0.375,
+   "z": 0.636,
+   "height_m": 1.27,
+   "frontal_m2": 0.954
+  },
+  {
+   "id": "static.prop.plastictable",
+   "x": 1.241,
+   "y": 1.241,
+   "z": 1.24,
+   "height_m": 2.48,
+   "frontal_m2": 6.155
+  },
+  {
+   "id": "static.prop.platformgarbage01",
+   "x": 1.817,
+   "y": 0.856,
+   "z": 0.166,
+   "height_m": 0.33,
+   "frontal_m2": 1.205
+  },
+  {
+   "id": "static.prop.purse",
+   "x": 0.08,
+   "y": 0.166,
+   "z": 0.293,
+   "height_m": 0.59,
+   "frontal_m2": 0.195
+  },
+  {
+   "id": "static.prop.shoppingbag",
+   "x": 0.237,
+   "y": 0.122,
+   "z": 0.3,
+   "height_m": 0.6,
+   "frontal_m2": 0.285
+  },
+  {
+   "id": "static.prop.shoppingcart",
+   "x": 0.335,
+   "y": 0.604,
+   "z": 0.54,
+   "height_m": 1.08,
+   "frontal_m2": 1.303
+  },
+  {
+   "id": "static.prop.shoppingtrolley",
+   "x": 0.253,
+   "y": 0.166,
+   "z": 0.547,
+   "height_m": 1.09,
+   "frontal_m2": 0.553
+  },
+  {
+   "id": "static.prop.slide",
+   "x": 0.471,
+   "y": 2.061,
+   "z": 0.988,
+   "height_m": 1.98,
+   "frontal_m2": 8.149
+  },
+  {
+   "id": "static.prop.streetbarrier",
+   "x": 0.607,
+   "y": 0.186,
+   "z": 0.535,
+   "height_m": 1.07,
+   "frontal_m2": 1.299
+  },
+  {
+   "id": "static.prop.streetfountain",
+   "x": 0.143,
+   "y": 0.335,
+   "z": 0.63,
+   "height_m": 1.26,
+   "frontal_m2": 0.844
+  },
+  {
+   "id": "static.prop.streetsign",
+   "x": 0.532,
+   "y": 0.063,
+   "z": 1.077,
+   "height_m": 2.15,
+   "frontal_m2": 2.293
+  },
+  {
+   "id": "static.prop.streetsign01",
+   "x": 1.235,
+   "y": 0.151,
+   "z": 1.939,
+   "height_m": 3.88,
+   "frontal_m2": 9.58
+  },
+  {
+   "id": "static.prop.streetsign04",
+   "x": 0.585,
+   "y": 0.062,
+   "z": 1.386,
+   "height_m": 2.77,
+   "frontal_m2": 3.247
+  },
+  {
+   "id": "static.prop.swing",
+   "x": 2.053,
+   "y": 0.788,
+   "z": 1.286,
+   "height_m": 2.57,
+   "frontal_m2": 10.561
+  },
+  {
+   "id": "static.prop.swingcouch",
+   "x": 0.679,
+   "y": 1.181,
+   "z": 1.125,
+   "height_m": 2.25,
+   "frontal_m2": 5.314
+  },
+  {
+   "id": "static.prop.table",
+   "x": 1.078,
+   "y": 1.076,
+   "z": 0.423,
+   "height_m": 0.85,
+   "frontal_m2": 1.825
+  },
+  {
+   "id": "static.prop.trafficcone01",
+   "x": 0.441,
+   "y": 0.441,
+   "z": 0.567,
+   "height_m": 1.13,
+   "frontal_m2": 1.001
+  },
+  {
+   "id": "static.prop.trafficcone02",
+   "x": 0.228,
+   "y": 0.197,
+   "z": 0.591,
+   "height_m": 1.18,
+   "frontal_m2": 0.539
+  },
+  {
+   "id": "static.prop.trafficwarning",
+   "x": 1.187,
+   "y": 1.435,
+   "z": 1.785,
+   "height_m": 3.57,
+   "frontal_m2": 10.247
+  },
+  {
+   "id": "static.prop.trampoline",
+   "x": 2.066,
+   "y": 2.066,
+   "z": 1.401,
+   "height_m": 2.8,
+   "frontal_m2": 11.576
+  },
+  {
+   "id": "static.prop.trashbag",
+   "x": 0.189,
+   "y": 0.215,
+   "z": 0.351,
+   "height_m": 0.7,
+   "frontal_m2": 0.302
+  },
+  {
+   "id": "static.prop.trashcan01",
+   "x": 0.318,
+   "y": 0.284,
+   "z": 0.424,
+   "height_m": 0.85,
+   "frontal_m2": 0.539
+  },
+  {
+   "id": "static.prop.trashcan02",
+   "x": 0.262,
+   "y": 0.257,
+   "z": 0.523,
+   "height_m": 1.05,
+   "frontal_m2": 0.548
+  },
+  {
+   "id": "static.prop.trashcan03",
+   "x": 0.315,
+   "y": 0.273,
+   "z": 0.467,
+   "height_m": 0.93,
+   "frontal_m2": 0.588
+  },
+  {
+   "id": "static.prop.trashcan04",
+   "x": 0.394,
+   "y": 0.29,
+   "z": 0.508,
+   "height_m": 1.02,
+   "frontal_m2": 0.802
+  },
+  {
+   "id": "static.prop.trashcan05",
+   "x": 0.394,
+   "y": 0.29,
+   "z": 0.508,
+   "height_m": 1.02,
+   "frontal_m2": 0.802
+  },
+  {
+   "id": "static.prop.travelcase",
+   "x": 0.284,
+   "y": 0.164,
+   "z": 0.631,
+   "height_m": 1.26,
+   "frontal_m2": 0.716
+  },
+  {
+   "id": "static.prop.vendingmachine",
+   "x": 0.436,
+   "y": 0.551,
+   "z": 1.054,
+   "height_m": 2.11,
+   "frontal_m2": 2.323
+  },
+  {
+   "id": "static.prop.warningaccident",
+   "x": 0.652,
+   "y": 0.528,
+   "z": 0.93,
+   "height_m": 1.86,
+   "frontal_m2": 2.428
+  },
+  {
+   "id": "static.prop.warningconstruction",
+   "x": 0.652,
+   "y": 0.528,
+   "z": 0.93,
+   "height_m": 1.86,
+   "frontal_m2": 2.428
+  },
+  {
+   "id": "static.prop.wateringcan",
+   "x": 0.035,
+   "y": 0.097,
+   "z": 0.067,
+   "height_m": 0.13,
+   "frontal_m2": 0.026
+  }
+ ]
+}

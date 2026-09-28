@@ -1,0 +1,21 @@
+{
+  "winner_extractor": "bev_cnn",
+  "label_names": [
+    "along_edge",
+    "covered",
+    "junction",
+    "open_space",
+    "other",
+    "passage",
+    "path"
+  ],
+  "id_to_label": {
+    "0": "along_edge",
+    "1": "covered",
+    "2": "junction",
+    "3": "open_space",
+    "4": "other",
+    "5": "passage",
+    "6": "path"
+  }
+}
